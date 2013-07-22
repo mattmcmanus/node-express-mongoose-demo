@@ -1,15 +1,23 @@
-!!! 5
-html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.facebook.com/2008/fbml', itemscope='itemscope', itemtype='http://schema.org/Product')
-  include ../includes/head
+!!! html
+//if lt IE 7
+    html(class="no-js ie6 oldie", lang="en")
+//if IE 7
+    html(class="no-js ie7 oldie", lang="en")
+//if IE 8
+    html(class="no-js ie8 oldie", lang="en")
+// [if gt IE 8] <!
+html(class="no-js", lang="en")
+  // <![endif]
+  head
+    include ../includes/head
   body
-    .wrapper
+    .container
       include ../includes/header
-      .container
-        .main-content
-          .main-head
-            block main
+      .row
+        .messages
           include ../includes/messages
-          block content
-      .push
+      .row
+        block content
+
     include ../includes/footer
     include ../includes/foot

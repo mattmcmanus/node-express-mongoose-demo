@@ -22,6 +22,7 @@ module.exports = function (app, config, passport) {
   }))
 
   app.use(express.favicon())
+  app.use(require('stylus').middleware(__dirname + '/public'));
   app.use(express.static(config.root + '/public'))
 
   // don't use logger for test env
